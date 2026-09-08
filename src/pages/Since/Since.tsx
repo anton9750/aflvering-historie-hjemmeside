@@ -38,7 +38,7 @@ export function Since() {
 
       {loading && <p>Loading...</p>}
       {error && <p>Something went wrong: {error}</p>}
-      {!loading && !error && <Timeline events={filteredEvents} />}
+      
       
     </>
   );

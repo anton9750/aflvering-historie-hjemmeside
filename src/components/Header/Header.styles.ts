@@ -6,26 +6,20 @@ export const HeaderWrapper = styled.div<{ $bgImage: string }>`
   height: 260px;
   background-image: url(${({ $bgImage }) => $bgImage});
   background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 `;
 
 export const Overlay = styled.div`
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+ 
 `;
 
 export const Banner = styled.div`
   position: relative;
   z-index: 1;
   background: ${({ theme }) => theme.bannerBackground};
-  border: 1px solid ${({ theme }) => theme.border};
-  padding: 24px 48px;
-  text-align: center;
-  max-width: 480px;
+
 `;
 
 export const Title = styled.h1`

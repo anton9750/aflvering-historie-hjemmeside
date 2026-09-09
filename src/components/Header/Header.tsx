@@ -8,7 +8,7 @@ interface HeaderProps {
 
 export function Header({ title, subtitle }: HeaderProps) {
   return (
-    <HeaderWrapper $bgImage={headerImage}>
+    <HeaderWrapper style={{ backgroundImage: `url(${headerImage})` }}>
       <Overlay />
       <Banner>
         <Title>{title}</Title>

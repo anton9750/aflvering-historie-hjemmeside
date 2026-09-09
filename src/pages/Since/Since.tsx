@@ -2,15 +2,15 @@ import { useMemo, useState } from 'react';
 import { Header } from '../../components/Header/Header';
 import { Navigation } from '../../components/Navigation/Navigation';
 import { Timeline } from '../../components/Timeline/Timeline';
-
+import { BackToTop } from '../../components/BackToTop/BackToTop';
 import { useFetch } from '../../hooks/useFetch';
 import type { HistoryData } from '../../types/history';
 
+const TODAY_URL = 'https://history.muffinlabs.com/date';
+
 export function Since() {
   const [sinceYear, setSinceYear] = useState<number>(1947);
-
-
-  const { data, loading, error } = useFetch<HistoryData>(null);
+  const { data, loading, error } = useFetch<HistoryData>(TODAY_URL);
 
   const filteredEvents = useMemo(() => {
     if (!data) return [];
@@ -38,8 +38,8 @@ export function Since() {
 
       {loading && <p>Loading...</p>}
       {error && <p>Something went wrong: {error}</p>}
-      
-      
+      {!loading && !error && <Timeline events={filteredEvents} />}
+      <BackToTop />
     </>
   );
 }

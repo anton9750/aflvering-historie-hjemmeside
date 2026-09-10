@@ -12,9 +12,8 @@ export function ByDate() {
   const [day, setDay] = useState<number>(today.getDate());
 
 
-  const url = null;
-  const { data, loading, error } = useFetch<HistoryData>(url);
-
+const url = `https://history.muffinlabs.com/date/${month}/${day}`;
+const { data, loading, error } = useFetch<HistoryData>(url);
   return (
     <>
       <Header

@@ -22,7 +22,7 @@ export const Row = styled.div<{ $side: 'left' | 'right' }>`
   position: relative;
   display: flex;
   justify-content: ${({ $side }) => ($side === 'left' ? 'flex-start' : 'flex-end')};
-  padding: 24px 0;
+  padding: 23px 0;
 
   &::before {
     content: '';
